@@ -1,0 +1,4 @@
+banner:
+  location: banner.txt
+server:
+  port: 8080
