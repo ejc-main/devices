@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "654de7ce-c4ad-489d-a732-c525025731ce",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create device",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"serialNumber\": \"123-qwefq\",\n\t\"machineCode\": \"weyqweqwoqiujp\",\n\t\"deviceName\": \"blaqewfqwh\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/devices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create device - invalid serial no",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"serialNumber\": \"!@#$%$^&\",\n\t\"machineCode\": \"weyoqiujp\",\n\t\"deviceName\": \"blah\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/devices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create device - invalid machine code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"serialNumber\": \"123-456\",\n\t\"machineCode\": \"\",\n\t\"deviceName\": \"blah\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/devices",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/devices?machineCode=weyoqiujp",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices"
+					],
+					"query": [
+						{
+							"key": "serialNumber",
+							"value": "123-456",
+							"disabled": true
+						},
+						{
+							"key": "machineCode",
+							"value": "weyoqiujp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update devices",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"serialNumber\": \"123-456\",\n    \"machineCode\": \"weyoqiujp\",\n    \"deviceName\": \"ooooo\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/devices/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
