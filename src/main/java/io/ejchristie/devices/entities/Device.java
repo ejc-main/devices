@@ -1,13 +1,16 @@
 package io.ejchristie.devices.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class Device implements Serializable {
 
+    private static final long serialVersionUID = -8165384680317463511L;
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DEVICE_ID_SEQUENCE")
+    @SequenceGenerator(name = "DEVICE_ID_SEQUENCE", sequenceName = "DEVICE_ID_SEQUENCE")
     private long id;
 
     private String serialNumber;

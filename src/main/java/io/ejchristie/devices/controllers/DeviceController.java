@@ -81,10 +81,10 @@ public class DeviceController {
         return ErrorMessage.SERIAL_NUMBER_AND_MACHINE_CODE_NOT_FOUND;
     }
 
-//    @ExceptionHandler(Exception.class)
-//    @ResponseBody
-//    public ErrorMessage handleException(Exception exception) {
-//        exception.printStackTrace();
-//        return ErrorMessage.UNKNOWN;
-//    }
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public ErrorMessage handleException(Exception exception) {
+        exception.printStackTrace();
+        return ErrorMessage.UNKNOWN;
+    }
 }
