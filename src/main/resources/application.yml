@@ -2,3 +2,7 @@ banner:
   location: banner.txt
 server:
   port: 8080
+  error:
+    include-stacktrace: never
+    whitelabel:
+      enabled: false
